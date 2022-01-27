@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bounce-Up</title>
+    <link rel="stylesheet" href="lastpage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Denk+One&family=Permanent+Marker&family=Russo+One&family=Slackey&display=swap" rel="stylesheet">
+<link rel="shortcut icon" type="image" href="./bounce-up.png">
+     </head>
+<body>
+    <header>
+        <div class="cartoon"><img src="cartoon.png" height="200px"alt=""></div>
+        <div class="bounceup">Bounce-Up!</div>
+        <div class="home">
+            <a href=".\index.html">
+                <button>Home</button>
+            </a>
+            </div>
+    </header>
+    
+
+    <div class="content">
+        <div class="gameover">GAME OVER!</div>
+        <div class="score"> </div>
+        <div class="playagain">
+            <a href=".\gamepage.html">
+                <button>Play Again</button>
+                </a>
+            </div>
+    </div>
+    <footer>
+        <div class="footer"></div>
+    </footer>
+    <script>
+        let score=document.querySelector('.score');
+        score.innerText = 'Your Score : '+ localStorage.getItem('Score');
+        const gameSound = new Audio('GameSound.mp3');
+        gameSound.play();
+        gameSound.playbackRate=2;
+        gameSound.loop=Infinity;
+    </script>
+</body>
+</html>

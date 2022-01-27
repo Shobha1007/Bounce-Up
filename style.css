@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* background-image: url('purplebg.jpg'); */
+    background-color:black;
+    
+    
+}
+
+.score{
+    color:white;
+    text-align: center;
+    font-family: 'Denk One', sans-serif;
+    font-size: 30px;
+    height: 45px;
+    background-color: black;
+    padding-top: 15px;
+    
+}
+.line{
+    background-color: rgb(196, 75, 226);
+    height: 3px;
+}
+.grid{
+    width: 400px;
+    height: 90vh;
+    
+    background-image: url('purplesky.jpg');
+    background-size: cover;
+    position: relative;
+    margin-left:35vw ;
+}
+.player{
+    width: 80px;
+    height: 80px;
+    background-image:url('cartoon.png');
+    background-size: cover;
+    /* background-color: black; */
+    position: absolute;
+    
+}
+.platform{
+    width: 100px;
+    height: 15px;
+    background:linear-gradient(rgb(141, 48, 196),rgb(29, 1, 46));
+    border-radius: 8px;
+    position: absolute;
+}
+
+@media (max-width:415px){
+    .grid{
+        width: 100vw;
+        height: 90vh;
+        background-color:rgb(67, 172, 137);
+        background-image: url('main\ background.jpg');
+        background-size: cover;
+        position: relative;
+        margin-left: 0px;
+    }
+}

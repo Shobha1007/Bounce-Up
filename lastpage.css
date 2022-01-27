@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    
+    background: linear-gradient(rgb(196, 133, 248),rgb(235, 219, 250));
+}
+.content{
+    width: 70vw;
+    height: 70vh;
+    position: relative;
+    /* margin-top: 15vh; */
+    margin-left: 15vw;
+    /* border: 0px solid white; */
+    /* border-radius: 33px; */
+    text-align: center;
+    /* background-color: white; */
+}
+header{
+    padding-top: 20px;
+    background-color: rgb(110, 9, 153);
+    background-size:0px;
+    /* background: rgb(47, 4, 87); */
+    color: rgb(252, 186, 246);
+    font-size: 80px;
+    height: 200px;
+    background-size: cover;
+    text-align: center;
+    /* font-family: 'Bangers', cursive; */
+    font-family: 'Permanent Marker', cursive;
+}
+.gameover{
+    font-family: 'Slackey', cursive;
+    font-size: 60px;
+    color: rgb(38, 2, 85);
+}
+.score{
+    /* padding-top: px; */
+    font-size: 25px;
+    /* font-family: 'Luckiest Guy', cursive; */
+    font-family: 'Russo One', sans-serif;
+    color:rgb(30, 1, 49);
+}
+.home button{
+    font-size: 20px;
+    background-color: rgb(195, 130, 233);
+    color:rgb(30, 1, 63);
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
+    position: relative;
+    text-align: center;
+    /* margin-left:35% ; */
+    /* margin-top:15px; */
+    font-family: 'Russo One', sans-serif;
+}
+.home{
+    margin-top: -54px
+}
+.cartoon{
+    position: absolute;
+    left:0px;
+    animation: movingcartoon 3s ease-in-out  infinite  ;
+}
+.playagain button{
+    font-size: 25px;
+    background-color: rgb(36, 1, 56);
+    color:white;
+    width: 250px;
+    height: 70px;
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+    /* margin-left:35% ; */
+    margin-top: 45px;
+    font-family: 'Russo One', sans-serif;
+
+}
+button:hover{
+    transform: translate(4px,4px) ;
+    background-color: rgba(80, 4, 116, 0.849);
+    transition: 0.2s;
+}
+@keyframes movingcartoon{
+    0%{
+        left: 0px;
+    }
+    50%{
+        left: 24vw;
+        /* transform: scale(-1,1); */
+    }
+    100%{
+        left: 0px;
+    }
+}
+.footer{
+    background-color: rgb(63, 5, 88);
+    height: 10vh;
+    text-align: center;
+}
+@media (max-width: 414px){
+    .gameover{
+        font-size: 42px;
+    }
+    header{
+        font-size: 63px;
+        height: 143px;
+    }
+    .cartoon{
+        bottom: 30px;
+    }
+}

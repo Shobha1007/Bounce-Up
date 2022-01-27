@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bounce-Up</title>
+    <link rel="stylesheet" type="text/css" href="firstpage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&family=Russo+One&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" type="image" href="./bounce-up.png">
+</head>
+
+<body>
+    <header>
+        <h2>Bounce-Up</h2>
+        <ul>
+            <li>Home</li>
+            <li>Play</li>
+            <li>Coins</li>
+        </ul>
+    </header>
+    <main>
+        <p>Welcome to Bounce-Up</p>
+        <a href="gamepage.html">
+            <button>Play Now</button>
+        </a>
+        <div class="cartoon"><img class="creature" src="cartoon.png" height="280px" alt=""></div>
+    </main>
+    <script>
+        const gameSound = new Audio('GameSound.mp3');
+        gameSound.play();
+        gameSound.playbackRate=2;
+        gameSound.loop=Infinity;
+    </script>
+</body>
+
+</html>
