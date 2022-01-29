@@ -8,7 +8,6 @@ body{
     
     
 }
-
 .score{
     color:white;
     text-align: center;
@@ -19,18 +18,20 @@ body{
     padding-top: 15px;
     
 }
+
 .line{
     background-color: rgb(196, 75, 226);
     height: 3px;
 }
 .grid{
     width: 400px;
-    height: 90vh;
+    height: 600px;
     
     background-image: url('purplesky.jpg');
     background-size: cover;
-    position: relative;
+    position: absolute;
     margin-left:35vw ;
+    /* z-index: 1; */
 }
 .player{
     width: 80px;
@@ -39,6 +40,7 @@ body{
     background-size: cover;
     /* background-color: black; */
     position: absolute;
+    /* z-index: 2; */
     
 }
 .platform{
@@ -46,16 +48,27 @@ body{
     height: 15px;
     background:linear-gradient(rgb(141, 48, 196),rgb(29, 1, 46));
     border-radius: 8px;
-    position: absolute;
-}
 
+    position: absolute;
+    /* z-index: -1; */
+}
+.congrats{
+    font-size: 60px;
+    color: rgb(255, 252, 60);
+    display: inline;
+    z-index:1;
+    position: absolute;
+    top:50px;
+}
 @media (max-width:415px){
     .grid{
         width: 100vw;
-        height: 90vh;
+        height: 80vh;
         /* background-color:rgb(67, 172, 137); */
         background-size: cover;
         position: relative;
         margin-left: 0px;
     }
+
+
 }

@@ -16,22 +16,78 @@
         <h2>Bounce-Up</h2>
         <ul>
             <li>Home</li>
-            <li>Play</li>
-            <li>Coins</li>
+            
+            <li>
+                <div class="dropdown"></div>
+                <button onclick="Help()" class="dropbtnhelp" >Help</button>
+                    <div id="helpdropdown" class="dropdown-contenthelp">
+                        <div class="help">
+                            To play Bounce-Up, simply move left to right arrow keys to reach the platforms. 
+The gameplay is endless, so jump for as long as possible to achieve your greatest score.
+Keep jumping higher and higher while earning points.
+
+Hippity hop your way to the top in Bounce-Up. This thrilling platform game has you jumping upwards to infinity. 
+Move on up!
+</div>
+                        </div>
+                    </div>
+            </li>
+            <li>
+                    <button onclick="myFunction()" class="dropbtn">High Score</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <div class="highscore"></div>
+                    </div>
+                </li>
+            
         </ul>
     </header>
     <main>
         <p>Welcome to Bounce-Up</p>
-        <a href="gamepage.html">
-            <button>Play Now</button>
-        </a>
+        <div class="text">
+            <a href="gamepage.html">
+                Play Now
+            </a>
+        </div>
         <div class="cartoon"><img class="creature" src="cartoon.png" height="280px" alt=""></div>
     </main>
     <script>
         const gameSound = new Audio('GameSound.mp3');
         gameSound.play();
-        gameSound.playbackRate=2;
-        gameSound.loop=Infinity;
+        gameSound.playbackRate = 2;
+        gameSound.loop = Infinity;
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        function Help() {
+            document.getElementById("helpdropdown").classList.toggle("show");
+        }
+        var highscore = document.querySelector(".highscore");
+        let hs=localStorage.getItem('HighScore');
+        localStorage.setItem('hs',hs);
+                highscore.innerHTML = 'High Score: ' + hs;
+                
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                
+                openDropdown = dropdowns;
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.contains('show')
+                }
+            }
+        }
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtnhelp')) {
+                var dropdowns = document.getElementsByClassName("dropdown-contenthelp");
+                
+                openDropdown = dropdowns;
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+                
+            }
+        }
+
     </script>
 </body>
 

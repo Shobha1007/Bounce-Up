@@ -32,15 +32,59 @@
             </div>
     </div>
     <footer>
-        <div class="footer"></div>
+        <div id="footer">
+            <div class="row">
+            
+                <div class="column">
+                    <h1>Bounce-Up</h1>
+                    <p>Hippity hop your way to the top in Bounce-Up. 
+                        This thrilling platform game has you 
+                        jumping upwards to infinity. </p>
+                    <p>Move on up!</p>
+                </div>
+                <div class="column">
+                    <h3>Creators <div class="underline"><span></span></div></h3>
+                    <p>Shobha</p>
+                    <p>Nidhi</p>
+                </div>
+                <div class="column">
+                    <h3>Links<div class="underline"><span></span></h3>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Services</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Contacts</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Bounce-Up © 2022 - All Rights Reserved</p>
+        </div>
     </footer>
     <script>
         let score=document.querySelector('.score');
-        score.innerText = 'Your Score : '+ localStorage.getItem('Score');
+        let Score = localStorage.getItem('Score');
+        let HighScore = localStorage.getItem('HighScore');
+        let congrats=document.querySelector('.gameover');
+        
         const gameSound = new Audio('GameSound.mp3');
         gameSound.play();
         gameSound.playbackRate=2;
         gameSound.loop=Infinity;
+
+        function Highscore(){
+        congrats.innerText='Congratulations !';
+        score.innerText='High Score : '+Score;
+        }
+        if(Score >=HighScore){
+            Highscore();
+            console.log('highscore');
+        }
+        else{
+            score.innerText = 'Your Score : '+ Score ;
+        }
+    
     </script>
 </body>
 </html>

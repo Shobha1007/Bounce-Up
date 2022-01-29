@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid');
     const player = document.createElement("div");
     let GameOver = false;
-    const gridheight = 600;
+    const gridheight = 650;
     let platCount = 5;
-    const platGap = gridheight / platCount;
+    const platGap = 600 / platCount;
     let platforms = [];
     let playerbottom=150;
     let startpoint =playerbottom;
@@ -17,23 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let leftTimerId;
     let RightTimeId;
     let score = 0;
+    let highScore=localStorage.getItem('hs');
     const loosingSound= new Audio('loosingSound.wav');
     const jumpSound = new Audio('jumpSound.wav');
     
-    
-    function createPlayer() {
-        grid.appendChild(player);
-        player.classList.add('player');
-        playerbottom = platforms[0].bottom + 15;
-        playerleft = platforms[0].left;
-        player.style.bottom=playerbottom + 'px';
-        player.style.left = playerleft + 'px';
-    }
-
     class Platform {
         constructor(newPlatBottom){
         this.bottom = newPlatBottom;
-        this.left = Math.random() * 300;
+        this.left = Math.random() * 280;
         let platform = document.createElement("div");
         this.visual=platform;
         }
@@ -75,6 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
     }
+    function createPlayer() {
+        grid.appendChild(player);
+        player.classList.add('player');
+        playerbottom = platforms[0].bottom + 15;
+        playerleft = platforms[0].left;
+        player.style.bottom=playerbottom + 'px';
+        player.style.left = playerleft + 'px';
+    }
+
     function jump(startpoint){
         clearInterval(downward);
         isJumping=true;
@@ -82,11 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
         upward = setInterval(function(){
             playerbottom+=20;
             player.style.bottom=playerbottom + 'px';
-            if (playerbottom >= (startpoint +150) || playerbottom>=600){
+            if (playerbottom >= (startpoint +160) || playerbottom>=600){
                 fall();
-                isJumping=false;
+                // isJumping=false;
             }
-
         },30)
     }
     
@@ -104,18 +103,18 @@ document.addEventListener('DOMContentLoaded', () => {
             platforms.forEach(platform=>{
                 if((platform.bottom+15>=playerbottom)&&
                     (playerbottom>=platform.bottom)&&
-                    ((playerleft + 85)>=platform.left)&&
+                    ((playerleft + 80)>=platform.left)&&
                     (playerleft<= (platform.left+100)) &&
                     (!isJumping)
                 ){
                     clearInterval(downward);
                     startpoint=playerbottom;
-                    console.log("landed");
+                    jump(startpoint);
                     isJumping=true;
                     jumpSound.play();
                     jumpSound.playbackRate=2;
                     // jumpSound.pause();
-                    jump(startpoint);
+                    
 
                 }
                 
@@ -126,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function moveleft(){
         if(isGoingRight){
-            clearInterval(RightTimeId);
+            clearInterval(RightTimerId);
             isGoingRight=false;
         }
         
@@ -153,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         isGoingRight=true;
         RightTimerId=setInterval(function(){
-            if(playerleft<330){
+            if(playerleft<=320){
                 playerleft+=4;
                 player.style.left = playerleft + 'px';
             }else{
@@ -171,6 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // jump(startpoint);
     }
     function control(e){
+        player.style.bottom = playerbottom + 'px';
         if(e.key==='ArrowLeft'){
             moveleft();
         }
@@ -194,6 +194,11 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(RightTimeId);
        
         localStorage.setItem('Score',score);
+        if(score>highScore){
+            highScore=score;
+        }
+        localStorage.setItem('HighScore',highScore);
+        
         let u=setInterval(function(){
             playerbottom+=15;
             player.style.bottom=playerbottom+'px';
@@ -204,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     playerbottom-=6;
                     player.style.bottom= playerbottom + 'px';
                     player.style.transform='rotate(90deg)';
-                    if(playerbottom<=1){
+                    if(playerbottom<=-10){
                         clearInterval(d);
                     }
                 }, 20);
@@ -215,10 +220,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // }
         setTimeout(function(){
             Playagain();
-        },2000);
-        
-
+        },1800);
     }
+    // if(window.s){
+    //     Arrow = document.createElement('button');
+    //     rightArrow = document.createElement('img');
+    //     rightArrow.src='./Arrow.png';
+    //     Arrow.appendChild(rightArrow);
+    //     grid.appendChild(Arrow);
+    // }
     function start() {
         if (!GameOver) {
             createPlatform();
