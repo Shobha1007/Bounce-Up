@@ -193,9 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(downward);
         clearInterval(leftTimerId);
         clearInterval(RightTimeId);
-        if(highScore==NULL){
-            highScore=0;
-        }
+        
         localStorage.setItem('Score',score);
         if(score>highScore){
             highScore=score;
