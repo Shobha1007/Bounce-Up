@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let RightTimeId;
     let score = 0;
     let highScore=localStorage.getItem('hs');
+    
     const loosingSound= new Audio('loosingSound.wav');
     const jumpSound = new Audio('jumpSound.wav');
     
@@ -192,7 +193,9 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(downward);
         clearInterval(leftTimerId);
         clearInterval(RightTimeId);
-       
+        if(highScore==NULL){
+            highScore=0;
+        }
         localStorage.setItem('Score',score);
         if(score>highScore){
             highScore=score;
