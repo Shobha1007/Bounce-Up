@@ -139,6 +139,12 @@ footer{
     .cartoon{
         bottom: 84px;
     }
+    .playagain button{
+        margin-top: 36px;
+    }
+    .score{
+        margin-top: 20px;
+    }
 }
 
 .column h1{
@@ -189,6 +195,7 @@ hr{
     100%{
         left: 100%;
     }
+
 }
 
 @media(max-width: 700px){

@@ -205,6 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.setItem('Score',score);
         if(highScore==null){
             highScore=0;
+            localStorage.setItem('hs',highScore);
         }
         if(score>=highScore){
             highScore=score;
@@ -214,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let u=setInterval(function(){
             playerbottom+=15;
             player.style.bottom=playerbottom+'px';
-            player.style.transform='scale(2,2)';
+            player.style.transform='scale(3,2)';
             if(playerbottom>=300){
                 clearInterval(u);
                 let d=setInterval(() => {
@@ -227,9 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 20);
             }
         },20)
-        // while(grid.firstChild){
-        //     grid.removeChild(grid.firstChild);
-        // }
+        
         setTimeout(function(){
             Playagain();
         },1800);
