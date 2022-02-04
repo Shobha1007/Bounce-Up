@@ -128,14 +128,14 @@ footer{
 }
 @media (max-width: 414px){
     .gameover{
-        font-size: 42px;
+        font-size: 29px;
     }
     header{
         font-size: 63px;
         height: 143px;
     }
     .cartoon{
-        bottom: unset;
+        bottom: 84px;
     }
 }
 

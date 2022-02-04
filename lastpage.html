@@ -64,8 +64,8 @@
     </footer>
     <script>
         let score=document.querySelector('.score');
-        let Score = localStorage.getItem('Score');
-        let HighScore = localStorage.getItem('HighScore');
+        let Score = sessionStorage.getItem('Score');
+        let HighScore = localStorage.getItem('hs');
         let congrats=document.querySelector('.gameover');
         
         const gameSound = new Audio('GameSound.mp3');
@@ -77,7 +77,7 @@
         congrats.innerText='Congratulations !';
         score.innerText='High Score : '+Score;
         }
-        if(Score >=HighScore){
+        if(Score >=HighScore || HighScore==null){
             Highscore();
             console.log('highscore');
         }

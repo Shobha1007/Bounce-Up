@@ -60,6 +60,33 @@ body{
     position: absolute;
     top:50px;
 }
+.rightarrow{
+    width: 90px;
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    opacity: 0.5;
+}
+.leftarrow{
+    width: 90px;
+    position: absolute;
+    bottom: 0px;
+    left: 10px;
+    opacity: 0.5;
+    transform: scale(-1,1);
+}
+.leftarrow:hover{
+    opacity:0.8;
+}
+.leftarrow:hover::after{
+    opacity: 0.5;
+}
+.rightarrow:hover{
+    opacity:0.8;
+}
+button{
+    cursor:pointer;
+}
 @media (max-width:415px){
     .grid{
         width: 100vw;

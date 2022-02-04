@@ -1,37 +1,31 @@
 *{
     margin: 0;
     padding:0;
-    font-family: sans-serif;
-    box-sizing: border-box;
+    
     }
-    body{
+body{
     height: 100vh;
     background: url('download.jfif');
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    }
-    h2{
-        font-family: 'Russo One', sans-serif;
-
-    }
-    
-    
-      header{
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        color: white;
-        background-color: #000;
-        
-    
-        }
-    header ul{
+}
+h2{
+    font-family: 'Russo One', sans-serif;
+}   
+header{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    background-color: #000;
+}
+header ul{
     list-style: none;
     display: flex;
-    }
-    header ul li{
+}
+header ul li{
     width: 150px;
     height: 60px;
     line-height: 60px;
@@ -39,31 +33,31 @@
     cursor: pointer;
     font-family: 'Russo One', sans-serif;
 
-    }
-    header ul li .dropbtn:hover{
-        background: linear-gradient(#cc66ff,#f4f4f4);
-        color: #000;
-        }
-    header ul li .dropbtnhelp:hover{
-        background: linear-gradient(#cc66ff,#f4f4f4);
-        color: #000;
-        }
-    header ul li:hover{
+}
+header ul li .dropbtn:hover{
     background: linear-gradient(#cc66ff,#f4f4f4);
     color: #000;
-        
     }
-    header ul li:nth-child(1){
+header ul li .dropbtnhelp:hover{
+    background: linear-gradient(#cc66ff,#f4f4f4);
+    color: #000;
+    }
+header ul li:hover{
+    background: linear-gradient(#cc66ff,#f4f4f4);
+    color: #000;
+    
+}
+header ul li:nth-child(1){
     border-top: 4px solid #cc33ff;
-    }
-    main{
+}
+main{
     height: calc(100vh - 60px);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    }
-    main p{
+}
+main p{
     width: 700px;
     height: 80px;
     line-height: 80px;
@@ -74,8 +68,8 @@
     border-radius: 20px;
     /* font-family: 'Bangers', cursive; */
     font-family: 'Luckiest Guy', cursive;
-    }
-    main button{
+}
+main button{
     width: 250px;
     height: 60px;
     border: none;
@@ -87,122 +81,175 @@
     cursor: pointer;
     font-family: 'Luckiest Guy', cursive;
     color: white;
-    }
-    main button:hover{
+}
+main button:hover{
     transform: translateY(5px);
     transition: 0.2s;
-    }
-    .cartoon .creature{
-        transform: scale(-1,1);
-        position: absolute;
-        right: 15px;
-        animation: jumpingcartoon 3s ease-in-out  infinite  ;
-        
-        
-    }
-    .dropbtn, .dropbtnhelp {
-        
-        padding: 20px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-        font-family: 'Russo One', sans-serif;
-        background-color: black;
-        color: white;
-        width: 144px;
-      }
+}
+.cartoon .creature{
+    transform: scale(-1,1);
+    position: absolute;
+    right: 15px;
+    animation: jumpingcartoon 3s ease-in-out  infinite  ;
+}
+.dropbtn, .dropbtnhelp {
     
-      
-     
-      .dropdown {
-        position: relative;
-        display: inline-block;
-        
-      }
-      .dropdown-content, .dropdown-contenthelp {
-        display: none;
-        position: absolute;
-        background-color: #ad07ee;
-        min-width: 160px;
-        height: 60px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
+    padding: 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Russo One', sans-serif;
+    background-color: black;
+    color: white;
+    width: 144px;
+    }
 
-      }      
-      .dropdown-contenthelp{
-        font-size: 12px;
-        height: 220px;
-        line-height: 25px;
-      }
-          
-      .highscore,.help {
-        color:white;
-        font-size: 15px;
-        text-decoration: none;
-        display: block;
-        font-family: 'Russo One', sans-serif;
-      }
-      
-      .show {display:block;}
-      .text a{
-        position: relative;
-        display: inline-block;
-        font-size: 20px;
-        text-transform: uppercase;
-        color: white;
-        text-decoration: none;
-        padding: 18px 30px;
-        letter-spacing: 2px;
-        font-weight: 500;
-        margin-top: 60px;
-        font-family: 'Luckiest Guy', cursive;
+    
+    
+    .dropdown {
+    position: relative;
+    display: inline-block;
+    
     }
-    .text a:before{
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 60px;
-        height: 60px;
-        border-radius: 50px;
-        background-color: #705491;
-        z-index: -1;
-        transition: all ease 0.5s;
+    .dropdown-content, .dropdown-contenthelp {
+    display: none;
+    position: absolute;
+    background-color: #ad07ee;
+    min-width: 160px;
+    height: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+    }      
+    .dropdown-contenthelp{
+    font-size: 12px;
+    height: 220px;
+    line-height: 25px;
     }
-    .text a:hover:before{
-        width: 100%;
+        
+    .highscore,.help {
+    color:white;
+    font-size: 15px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Russo One', sans-serif;
     }
     
-    header ul li a{
-        text-decoration: none;
-        font-family: 'Russo One', sans-serif;
-        color: white;
+    .show {display:block;}
+    .text a{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    padding: 18px 30px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-top: 60px;
+    font-family: 'Luckiest Guy', cursive;
+}
+.text a:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    background-color: #705491;
+    z-index: -1;
+    transition: all ease 0.5s;
+}
+.text a:hover:before{
+    width: 100%;
+}
+
+header ul li a{
+    text-decoration: none;
+    font-family: 'Russo One', sans-serif;
+    color: white;
+}
+header ul li :hover{
+    color: #000;
+}
+.char{
+    position: absolute;
+    left: 30px;
+}
+button{
+    cursor: pointer;
+}
+@keyframes jumpingcartoon{
+    0%{
+        bottom: 0px;
     }
-    header ul li :hover{
-        color: #000;
+    50%{
+        bottom: 250px;
     }
-    .char{
-      position: absolute;
-      left: 30px;
-  }
-    @keyframes jumpingcartoon{
-        0%{
-            bottom: 0px;
-        }
-        50%{
-            bottom: 250px;
-        }
-        100%{
-            bottom: 0px;
-        }
+    100%{
+        bottom: 0px;
     }
-    @media (max-width:414px){
-        main p{               
-                 width: 784px;
-                height: 146px;
-                line-height: 128px;
-                text-align: center;
-                font-size: 60px;
-        }
+}
+@media (max-width: 414px){
+
+    body{
+        background-image: url('phonebg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
     }
+    main p{
+        width: 348px;
+        height: 61px;
+        line-height: 66px;
+        text-align: center;
+        font-size: 25px;
+    }
+    .cartoon .creature {
+        
+        width: 178px;
+        height: 182px;}
+    h2{
+        font-size: 17px;
+    }
+    .dropbtn{
+        font-size: 12px;
+        width: 60px;
+        padding:0px;
+    }
+    .dropbtnhelp{
+        font-size: 12px;
+        width: 60px;
+    }
+    header ul li{
+        font-size: 12px;
+        width: 65px;
+        line-height: 47px;
+    }
+    header{
+        height: 50px;
+    }
+    .list{
+        width: 224px;
+    }
+    .dropdown-contenthelp{
+        height: 454px;
+        width: 172px;
+        font-size: 11px;
+    }
+    .dropdown-content{
+        min-width: 106px;
+        height: 50px;
+    }
+    .highscore{
+        font-size: 12px;
+    }
+
+
+}
+/* @media(max-width: 414px){
+    main p {
+        width: 784px;
+    }
+} */
     

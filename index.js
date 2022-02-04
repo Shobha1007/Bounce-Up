@@ -182,6 +182,14 @@ document.addEventListener('DOMContentLoaded', () => {
             movestraight();
         }
     }
+    window.onclick = function(event){
+        if(event.target.matches('.rightarrow')){
+            moveright();
+        }
+        else if(event.target.matches('.leftarrow')){
+            moveleft();
+        }
+    }
     function Playagain(){
         window.document.location='./lastpage.html';
     }
@@ -194,11 +202,14 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(leftTimerId);
         clearInterval(RightTimeId);
         
-        localStorage.setItem('Score',score);
-        if(score>highScore){
-            highScore=score;
+        sessionStorage.setItem('Score',score);
+        if(highScore==null){
+            highScore=0;
         }
-        localStorage.setItem('HighScore',highScore);
+        if(score>=highScore){
+            highScore=score;
+            localStorage.setItem('hs',highScore);
+        }
         
         let u=setInterval(function(){
             playerbottom+=15;
@@ -223,13 +234,21 @@ document.addEventListener('DOMContentLoaded', () => {
             Playagain();
         },1800);
     }
-    // if(window.s){
-    //     Arrow = document.createElement('button');
-    //     rightArrow = document.createElement('img');
-    //     rightArrow.src='./Arrow.png';
-    //     Arrow.appendChild(rightArrow);
-    //     grid.appendChild(Arrow);
-    // }
+    if(screen.width <= 414 ){
+        RArrow = document.createElement('button');
+        rightArrow = document.createElement('img');
+        rightArrow.src='./Arrow.png';
+        rightArrow.classList.add('rightarrow');
+        // rightArrow.width='00px';
+        RArrow.appendChild(rightArrow);
+        grid.appendChild(RArrow);
+        LArrow = document.createElement('button');
+        leftArrow = document.createElement('img');
+        leftArrow.src='./Arrow.png';
+        leftArrow.classList.add('leftarrow');
+        LArrow.appendChild(leftArrow);
+        grid.appendChild(LArrow);
+    }
     function start() {
         if (!GameOver) {
             createPlatform();

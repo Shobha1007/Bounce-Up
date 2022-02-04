@@ -9,37 +9,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&family=Russo+One&display=swap"
         rel="stylesheet">
     <link rel="shortcut icon" type="image" href="./bounce-up.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
     <header>
         <h2>Bounce-Up</h2>
-        <ul>
-            <li>Home</li>
-            
-            <li>
-                <div class="dropdown"></div>
-                <button onclick="Help()" class="dropbtnhelp" >Help</button>
-                    <div id="helpdropdown" class="dropdown-contenthelp">
-                        <div class="help">
-                            To play Bounce-Up, simply move left to right arrow keys to reach the platforms. 
-The gameplay is endless, so jump for as long as possible to achieve your greatest score.
-Keep jumping higher and higher while earning points.
+        <div class="list">
+            <ul>
+                <li>Home</li>
 
-Hippity hop your way to the top in Bounce-Up. This thrilling platform game has you jumping upwards to infinity. 
-Move on up!
-</div>
+                <li>
+                    <div class="dropdown"></div>
+                        <button onclick="Help()" class="dropbtnhelp">Help</button>
+                        <div id="helpdropdown" class="dropdown-contenthelp">
+                            <div class="help">
+                                To play Bounce-Up, simply move left to right arrow keys to reach the platforms.
+                                The gameplay is endless, so jump for as long as possible to achieve your greatest score.
+                                Keep jumping higher and higher while earning points.
+
+                                Hippity hop your way to the top in Bounce-Up. This thrilling platform game has you jumping
+                                upwards to infinity.
+                                Move on up!
+                            </div>
                         </div>
-                    </div>
-            </li>
-            <li>
+                   
+                </li>
+                <li>
                     <button onclick="myFunction()" class="dropbtn">High Score</button>
                     <div id="myDropdown" class="dropdown-content">
                         <div class="highscore"></div>
                     </div>
                 </li>
-            
-        </ul>
+
+            </ul>
+        </div>
+        
+    
+
     </header>
     <main>
         <p>Welcome to Bounce-Up</p>
@@ -61,15 +68,16 @@ Move on up!
         function Help() {
             document.getElementById("helpdropdown").classList.toggle("show");
         }
+
         var highscore = document.querySelector(".highscore");
-        let hs=localStorage.getItem('HighScore');
-        localStorage.setItem('hs',hs);
-                highscore.innerHTML = 'High Score: ' + hs;
-                
+        let hs = localStorage.getItem('hs');
+        // localStorage.setItem('hs',hs);
+        highscore.innerHTML = 'High Score: ' + hs;
+
         window.onclick = function (event) {
             if (!event.target.matches('.dropbtn')) {
                 var dropdowns = document.getElementsByClassName("dropdown-content");
-                
+
                 openDropdown = dropdowns;
                 if (openDropdown.classList.contains('show')) {
                     openDropdown.classList.contains('show')
@@ -79,12 +87,12 @@ Move on up!
         window.onclick = function (event) {
             if (!event.target.matches('.dropbtnhelp')) {
                 var dropdowns = document.getElementsByClassName("dropdown-contenthelp");
-                
+
                 openDropdown = dropdowns;
                 if (openDropdown.classList.contains('show')) {
                     openDropdown.classList.remove('show');
                 }
-                
+
             }
         }
 
