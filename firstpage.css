@@ -30,7 +30,7 @@ header ul li{
     height: 60px;
     line-height: 60px;
     text-align: center;
-    cursor: pointer;
+    /* cursor: pointer; */
     font-family: 'Russo One', sans-serif;
 
 }
@@ -78,7 +78,7 @@ main button{
     margin-top: 30px;
     font-size: 30px;
     background: linear-gradient(#8dcfee,#3f7fe0);
-    cursor: pointer;
+    cursor: default;
     font-family: 'Luckiest Guy', cursive;
     color: white;
 }
@@ -102,6 +102,7 @@ main button:hover{
     background-color: black;
     color: white;
     width: 144px;
+    cursor: default;
     }
 
     
@@ -148,6 +149,7 @@ main button:hover{
     font-weight: 500;
     margin-top: 60px;
     font-family: 'Luckiest Guy', cursive;
+    cursor:default;
 }
 .text a:before{
     content: '';
@@ -177,9 +179,7 @@ header ul li :hover{
     position: absolute;
     left: 30px;
 }
-button{
-    cursor: pointer;
-}
+
 @keyframes jumpingcartoon{
     0%{
         bottom: 0px;
