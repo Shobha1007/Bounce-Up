@@ -61,7 +61,7 @@ header{
     /* margin-top:15px; */
     /* font-family: 'Russo One', sans-serif; */
     font-family: 'Titan One', cursive;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 .home{
     margin-top: -54px
@@ -84,7 +84,7 @@ header{
     margin-top: 10px;
     /* font-family: 'Russo One', sans-serif; */
     font-family: 'Titan One', cursive;
-    cursor: pointer;
+    /* cursor: pointer; */
 
 }
 button:hover{
@@ -136,11 +136,12 @@ footer{
 }
 @media (max-width: 414px){
     .gameover{
-        font-size: 29px;
+        font-size: 26px;
+        margin-top: 34px;
     }
     header{
         font-size: 63px;
-        height: 143px;
+        height: 190px;
     }
     .cartoon{
         bottom: 84px;
@@ -150,6 +151,9 @@ footer{
     }
     .score{
         margin-top: 20px;
+    }
+    .home{
+        margin-top: -33px;
     }
 }
 
