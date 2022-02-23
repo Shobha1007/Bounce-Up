@@ -129,7 +129,9 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(RightTimerId);
             isGoingRight=false;
         }
-        
+        if(isGoingLeft){
+            clearInterval(leftTimerId);
+        }
         player.style.transform='scale(-1,1)';
         isGoingLeft=true;
         leftTimerId=setInterval(function(){
@@ -138,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 player.style.left = playerleft + 'px';
             }else{
                 // clearInterval(leftTimerId);
-                // isGoingLeft=false;
+                isGoingRight=false;
                 moveright();
             }
             
@@ -150,6 +152,9 @@ document.addEventListener('DOMContentLoaded', () => {
             isGoingLeft=false;
             player.style.setProperty('transform','initial')
         }
+        if(isGoingRight==true){
+            clearInterval(RightTimeId);
+        }
         
         isGoingRight=true;
         RightTimerId=setInterval(function(){
@@ -158,8 +163,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 player.style.left = playerleft + 'px';
             }else{
                 // clearInterval(RightTimeId);
-                // isGoingRight=false;
+                isGoingLeft=false;
                 moveleft();
+                // moveleft();
             }
             
         },20)}
